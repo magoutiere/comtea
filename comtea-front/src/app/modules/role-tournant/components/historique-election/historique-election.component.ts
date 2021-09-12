@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {RoleTournantApiService} from "../../../../../../api/services/role-tournant-api.service";
+import {RoleTournantService} from "../../services/role-tournant.service";
+import {HistoriqueElection} from "../../../../../../api/models/historique-election";
+import {NotificationService} from "../../../../services/notification.service";
+import {Collaborateur} from "../../../../../../api/models/collaborateur";
 
 @Component({
   selector: 'app-historique-election',
@@ -8,13 +11,25 @@ import {RoleTournantApiService} from "../../../../../../api/services/role-tourna
 })
 export class HistoriqueElectionComponent implements OnInit {
 
-  constructor(private roleTournantApiService: RoleTournantApiService) {
+  historiqueElection: HistoriqueElection[] = [];
+
+  constructor(private roleTournantService: RoleTournantService, private notificationService: NotificationService) {
   }
 
   ngOnInit(): void {
-    this.roleTournantApiService.historique({role: 'cafe'})
-      .toPromise()
-      .then(value => console.log(value));
+    this.roleTournantService.historiqueElection.subscribe(value => this.historiqueElection = value)
+    this.roleTournantService.majHistorique();
   }
 
+  lancerElection() {
+    this.roleTournantService.lancerElection()
+      .then((vainqueur: Collaborateur) => {
+        this.notificationService.success({
+          titre: "Election",
+          message: `Félicitation ${vainqueur.identifiant} !`
+        });
+      })
+      .catch(() => {
+      });
+  }
 }

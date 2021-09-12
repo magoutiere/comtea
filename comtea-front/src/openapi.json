@@ -1,1 +1,183 @@
-{"openapi":"3.0.1","info":{"title":"OpenAPI definition","version":"v0"},"servers":[{"url":"http://localhost:8080","description":"Generated server url"}],"paths":{"/api/collaborateur":{"get":{"tags":["collaborateur-api"],"operationId":"liste","responses":{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"array","items":{"$ref":"#/components/schemas/Collaborateur"}}}}}}},"post":{"tags":["collaborateur-api"],"operationId":"creer","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/Collaborateur"}}},"required":true},"responses":{"200":{"description":"OK"}}}},"/api/role-tournant/{role}/historique":{"get":{"tags":["role-tournant-api"],"operationId":"historique","parameters":[{"name":"role","in":"path","required":true,"schema":{"type":"string"}}],"responses":{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"array","items":{"$ref":"#/components/schemas/HistoriqueElection"}}}}}}}},"/api/collaborateur/{identifiant}":{"delete":{"tags":["collaborateur-api"],"operationId":"supprimer","parameters":[{"name":"identifiant","in":"path","required":true,"schema":{"type":"string"}}],"responses":{"200":{"description":"OK"}}}}},"components":{"schemas":{"Collaborateur":{"required":["identifiant"],"type":"object","properties":{"id":{"type":"string","format":"uuid"},"identifiant":{"type":"string"}}},"HistoriqueElection":{"type":"object","properties":{"id":{"type":"string","format":"uuid"},"role":{"type":"string"},"vainqueur":{"type":"string"},"date":{"type":"string","format":"date"}}}}}}
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "OpenAPI definition",
+    "version": "v0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8080",
+      "description": "Generated server url"
+    }
+  ],
+  "paths": {
+    "/api/collaborateur": {
+      "get": {
+        "tags": [
+          "collaborateur-api"
+        ],
+        "operationId": "liste",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Collaborateur"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "collaborateur-api"
+        ],
+        "operationId": "creer",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Collaborateur"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/role-tournant/{role}/historique": {
+      "get": {
+        "tags": [
+          "role-tournant-api"
+        ],
+        "operationId": "historique",
+        "parameters": [
+          {
+            "name": "role",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/HistoriqueElection"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/role-tournant/{role}/election": {
+      "get": {
+        "tags": [
+          "role-tournant-api"
+        ],
+        "operationId": "election",
+        "parameters": [
+          {
+            "name": "role",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Collaborateur"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/collaborateur/{identifiant}": {
+      "delete": {
+        "tags": [
+          "collaborateur-api"
+        ],
+        "operationId": "supprimer",
+        "parameters": [
+          {
+            "name": "identifiant",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Collaborateur": {
+        "required": [
+          "identifiant"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "identifiant": {
+            "type": "string"
+          }
+        }
+      },
+      "HistoriqueElection": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "role": {
+            "type": "string"
+          },
+          "vainqueur": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string",
+            "format": "date"
+          }
+        }
+      }
+    }
+  }
+}

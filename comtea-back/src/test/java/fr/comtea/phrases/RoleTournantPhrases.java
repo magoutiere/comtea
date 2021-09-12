@@ -4,8 +4,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.List;
 
-import fr.comtea.service.collaborateur.Collaborateur;
-import fr.comtea.service.collaborateur.CollaborateurService;
+import fr.comtea.controller.RoleTournantController;
 import fr.comtea.service.roletournant.HistoriqueElection;
 import fr.comtea.service.roletournant.RoleTournantService;
 import io.cucumber.java.fr.Alors;
@@ -18,6 +17,8 @@ public class RoleTournantPhrases {
 
     private final RoleTournantService roleTournantService;
 
+    private final RoleTournantController roleTournantController;
+
     @Etantdonné("l'historique des élus :")
     public void preparerHistoriqueElus(final List<HistoriqueElection> historiqueElections) {
         roleTournantService.creerOuMettreAJourHistoriqueElection(historiqueElections);
@@ -25,7 +26,7 @@ public class RoleTournantPhrases {
 
     @Quand("je lance l'élection pour le role {string}")
     public void lancerElectionRole(final String role) {
-        var collaborateur = roleTournantService.lancerElectionPourRole(role);
+        var collaborateur = roleTournantController.election(role);
         ContexteTest.setVainqueurElectionObtenu(collaborateur);
     }
 
