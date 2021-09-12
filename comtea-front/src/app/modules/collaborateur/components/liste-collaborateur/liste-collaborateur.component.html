@@ -2,11 +2,13 @@
   <ng-template pTemplate="header">
     <tr>
       <th>Identifiant</th>
+      <th>&nbsp;</th>
     </tr>
   </ng-template>
   <ng-template pTemplate="body" let-collaborateur>
     <tr>
       <td>{{collaborateur.identifiant}}</td>
+      <td><button pButton (click)="supprimer(collaborateur)">Supprimer</button></td>
     </tr>
   </ng-template>
 </p-table>

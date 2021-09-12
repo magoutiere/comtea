@@ -20,3 +20,13 @@ Fonctionnalité: Gestion des collaborateurs
       | identifiant |
       |             |
     Alors j'obtiens une erreur 'L\'identifiant ne doit pas être vide'
+
+  Scénario: COLLABORATEUR-003 Suppression d'un collaborateur
+    Etant donné les collaborateurs suivants :
+      | identifiant |
+      | pifou       |
+      | caillou     |
+    Quand je supprime le collaborateur 'pifou'
+    Alors j'obtiens les collaborateurs suivants :
+      | identifiant |
+      | caillou     |

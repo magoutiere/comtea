@@ -2,12 +2,12 @@ import {Injectable} from "@angular/core";
 import {HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from "@angular/common/http";
 import {Observable, throwError} from "rxjs";
 import {tap} from "rxjs/operators";
-import {MessageService} from "primeng/api";
+import {NotificationService} from "./notification.service";
 
 @Injectable()
 export class ApiInterceptor implements HttpInterceptor {
 
-  constructor(private messageService: MessageService) {
+  constructor(private notificationService: NotificationService) {
   }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
@@ -25,8 +25,7 @@ export class ApiInterceptor implements HttpInterceptor {
           }
         }
 
-        this.messageService.add({severity: 'error', summary: 'Erreur', detail: message});
-        console.warn(message)
+        this.notificationService.erreur({titre: 'Erreur', message});
         return throwError(message);
       })
     );

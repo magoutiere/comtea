@@ -1,11 +1,18 @@
-<p-panel>
+<p-toast position="top-right"></p-toast>
+<div>
+  <p-panel header="Collaborateurs">
+    <app-form-ajout-collaborateur></app-form-ajout-collaborateur>
+    <p-divider></p-divider>
+    <app-liste-collaborateur></app-liste-collaborateur>
+  </p-panel>
+</div>
+<div  class="mt-4">
+  <p-panel header="Rôles tournants">
+    <app-historique-election></app-historique-election>
+  </p-panel>
+</div>
 
-  <p-toast position="top-right"></p-toast>
 
-  <app-form-ajout-collaborateur></app-form-ajout-collaborateur>
 
-  <app-liste-collaborateur></app-liste-collaborateur>
 
-  <app-historique-election></app-historique-election>
 
-</p-panel>

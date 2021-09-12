@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {RoleTournantApiService} from "../../../../../api/services/role-tournant-api.service";
+import {RoleTournantApiService} from "../../../../../../api/services/role-tournant-api.service";
 
 @Component({
   selector: 'app-historique-election',

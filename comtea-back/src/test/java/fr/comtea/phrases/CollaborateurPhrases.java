@@ -1,9 +1,12 @@
 package fr.comtea.phrases;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 import java.util.List;
 
+import fr.comtea.controller.CollaborateurController;
 import fr.comtea.service.collaborateur.Collaborateur;
-import fr.comtea.service.collaborateur.CollaborateurService;
+import io.cucumber.java.fr.Alors;
 import io.cucumber.java.fr.Etantdonné;
 import io.cucumber.java.fr.Quand;
 import lombok.RequiredArgsConstructor;
@@ -11,19 +14,33 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class CollaborateurPhrases {
 
-    private final CollaborateurService collaborateurService;
+    private final CollaborateurController collaborateurController;
 
     @Etantdonné("les collaborateurs suivants :")
     public void preparerCollaborateurs(final List<Collaborateur> collaborateurs) {
-        collaborateurService.creerOuMettreAJourCollaborateurs(collaborateurs);
+        collaborateurs.forEach(collaborateurController::creer);
     }
 
     @Quand("je crée le(s) collaborateur(s) suivant(s) :")
     public void creerCollaborateurs(final List<Collaborateur> collaborateurs) {
         try {
-            collaborateurService.creerOuMettreAJourCollaborateurs(collaborateurs);
-        }catch (final Exception ex){
+            collaborateurs.forEach(collaborateurController::creer);
+        } catch (final Exception ex) {
             ContexteTest.setException(ex);
         }
+    }
+
+    @Quand("je supprime le collaborateur {string}")
+    public void supprimerCollaborateur(final String identifiant) {
+        collaborateurController.supprimer(identifiant);
+    }
+
+    @Alors("j'obtiens les collaborateurs suivants :")
+    public void verifierCollaborateurs(final List<Collaborateur> collaborateursAttendus) {
+        List<Collaborateur> collaborateurs = collaborateurController.liste();
+
+        assertThat(collaborateurs)//
+            .usingElementComparatorIgnoringFields("id")//
+            .containsExactlyInAnyOrderElementsOf(collaborateursAttendus);
     }
 }

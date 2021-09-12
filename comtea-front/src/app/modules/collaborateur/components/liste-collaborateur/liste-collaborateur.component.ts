@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Collaborateur} from "../../../../../api/models/collaborateur";
-import {CollaborateurService} from "../../collaborateur.service";
+import {Collaborateur} from "../../../../../../api/models/collaborateur";
+import {CollaborateurService} from "../../services/collaborateur.service";
 
 @Component({
   selector: 'app-liste-collaborateur',
@@ -19,4 +19,7 @@ export class ListeCollaborateurComponent implements OnInit {
   }
 
 
+  supprimer(collaborateur: Collaborateur) {
+    this.collaborateurService.supprimerCollaborateur(collaborateur);
+  }
 }

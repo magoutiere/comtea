@@ -35,4 +35,8 @@ public class CollaborateurService {
         return collaborateurRepository.findByIdentifiant(identifiant)//
             .map(collaborateurMapper::entiteAMetier);
     }
+
+    public void supprimerCollaborateur(final String identifiant) {
+        collaborateurRepository.deleteByIdentifiant(identifiant);
+    }
 }

@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
-import {Collaborateur} from "../../../../../api/models/collaborateur";
-import {CollaborateurService} from "../../collaborateur.service";
+import {Collaborateur} from "../../../../../../api/models/collaborateur";
+import {CollaborateurService} from "../../services/collaborateur.service";
 
 @Component({
   selector: 'app-form-ajout-collaborateur',
