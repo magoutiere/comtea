@@ -1,0 +1,7 @@
+https://www.primefaces.org/
+
+https://www.mokkapps.de/blog/how-to-generate-angular-and-spring-code-from-open-api-specification/
+
+https://blogs.halodoc.io/angular-best-practices/
+
+https://stackoverflow.com/questions/37587732/how-to-call-another-components-function-in-angular2

@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/comtea
+    username: comtea
+    password: comtea
+
+server:
+  error:
+    include-binding-errors: always
