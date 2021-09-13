@@ -6,8 +6,7 @@ import {Collaborateur} from "../../../../../../api/models/collaborateur";
 
 @Component({
   selector: 'app-historique-election',
-  templateUrl: './historique-election.component.html',
-  styleUrls: ['./historique-election.component.css']
+  templateUrl: './historique-election.component.html'
 })
 export class HistoriqueElectionComponent implements OnInit {
 

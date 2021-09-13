@@ -1,4 +1,4 @@
-import {NgModule, OnInit} from '@angular/core';
+import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {ListeCollaborateurComponent} from './components/liste-collaborateur/liste-collaborateur.component';
 import {FormAjoutCollaborateurComponent} from './components/form-ajout-collaborateur/form-ajout-collaborateur.component';
@@ -8,8 +8,6 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {DataViewModule} from "primeng/dataview";
 import {CardModule} from "primeng/card";
 import {TableModule} from "primeng/table";
-import {RippleModule} from "primeng/ripple";
-import {PrimeNGConfig} from "primeng/api";
 
 @NgModule({
   declarations: [
@@ -27,16 +25,11 @@ import {PrimeNGConfig} from "primeng/api";
     ReactiveFormsModule,
     DataViewModule,
     CardModule,
-    TableModule,
-    RippleModule
+    TableModule
   ]
 })
-export class CollaborateurModule implements OnInit {
+export class CollaborateurModule {
 
-  constructor(private primengConfig: PrimeNGConfig) {
-  }
-
-  ngOnInit(): void {
-    this.primengConfig.ripple = true;
+  constructor() {
   }
 }

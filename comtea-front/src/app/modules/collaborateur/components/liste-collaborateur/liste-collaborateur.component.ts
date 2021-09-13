@@ -4,8 +4,7 @@ import {CollaborateurService} from "../../services/collaborateur.service";
 
 @Component({
   selector: 'app-liste-collaborateur',
-  templateUrl: './liste-collaborateur.component.html',
-  styleUrls: ['./liste-collaborateur.component.css']
+  templateUrl: './liste-collaborateur.component.html'
 })
 export class ListeCollaborateurComponent implements OnInit {
   collaborateurs: Array<Collaborateur> = [];

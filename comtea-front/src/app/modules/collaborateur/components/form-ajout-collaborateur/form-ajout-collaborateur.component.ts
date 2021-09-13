@@ -5,8 +5,7 @@ import {CollaborateurService} from "../../services/collaborateur.service";
 
 @Component({
   selector: 'app-form-ajout-collaborateur',
-  templateUrl: './form-ajout-collaborateur.component.html',
-  styleUrls: ['./form-ajout-collaborateur.component.css']
+  templateUrl: './form-ajout-collaborateur.component.html'
 })
 export class FormAjoutCollaborateurComponent implements OnInit {
   nouveauCollaborateurForm = new FormGroup({
