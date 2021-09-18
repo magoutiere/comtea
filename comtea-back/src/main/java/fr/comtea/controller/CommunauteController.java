@@ -3,7 +3,7 @@ package fr.comtea.controller;
 import javax.validation.Valid;
 import java.util.List;
 
-import fr.comtea.metier.collaborateur.Collaborateur;
+import fr.comtea.metier.communaute.Communaute;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -15,15 +15,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@Tag(name = "collaborateur-api")
-@RequestMapping("/api/collaborateur")
-public interface CollaborateurController {
+@Tag(name = "communaute-api")
+@RequestMapping("/api/communaute")
+public interface CommunauteController {
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    void creer(@Valid @RequestBody Collaborateur collaborateur);
+    void creerOuMettreAJour(@Valid @RequestBody Communaute communaute);
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    List<Collaborateur> liste();
+    List<Communaute> liste();
 
     @DeleteMapping("/{identifiant}")
     void supprimer(@PathVariable String identifiant);

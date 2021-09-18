@@ -4,14 +4,13 @@ import javax.validation.constraints.NotBlank;
 import java.util.UUID;
 
 import fr.comtea.metier.collaborateur.validateur.CollaborateurUnique;
-import lombok.Data;
 
-@Data
 @CollaborateurUnique
-public class Collaborateur {
+public record Collaborateur(UUID id, //
+                            @NotBlank(message = "L'identifiant ne doit pas être vide") String identifiant) {
 
-    private UUID id = UUID.randomUUID();
-
-    @NotBlank(message = "L'identifiant ne doit pas être vide")
-    private String identifiant;
+    @Override
+    public String toString() {
+        return identifiant;
+    }
 }

@@ -1,4 +1,4 @@
-package fr.comtea.metier.collaborateur.validateur;
+package fr.comtea.metier.communaute.validateur;
 
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
@@ -9,13 +9,15 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
-@Constraint(validatedBy = CollaborateurUniqueValidateur.class)
+import fr.comtea.metier.collaborateur.validateur.CollaborateurUniqueValidateur;
+
+@Constraint(validatedBy = CommunauteUniqueValidateur.class)
 @Target({ ElementType.TYPE })
 @Retention(RUNTIME)
 @Documented
-public @interface CollaborateurUnique {
+public @interface CommunauteUnique {
 
-    String message() default "Le collaborateur ${validatedValue} éxiste déjà";
+    String message() default "La communauté ${validatedValue} éxiste déjà";
 
     Class<?>[] groups() default {};
 

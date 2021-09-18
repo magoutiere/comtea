@@ -47,12 +47,12 @@ public class RoleTournantService {
     }
 
     private void enregistrerHistoriqueVainqueur(final String role, final Collaborateur collaborateurGagnant) {
-        var nouvelHistorique = historiqueElectionRepository.findByRoleAndVainqueur(role, collaborateurGagnant.getIdentifiant())//
+        var nouvelHistorique = historiqueElectionRepository.findByRoleAndVainqueur(role, collaborateurGagnant.identifiant())//
             .map(historiqueElectionMapper::entiteAMetier)//
             .orElseGet(() -> {
                 HistoriqueElection historique = new HistoriqueElection();
                 historique.setRole(role);
-                historique.setVainqueur(collaborateurGagnant.getIdentifiant());
+                historique.setVainqueur(collaborateurGagnant.identifiant());
                 return historique;
             });
 
@@ -70,7 +70,7 @@ public class RoleTournantService {
         final List<HistoriqueElectionEntity> historiqueParRole) {
         return collaborateurs.stream()//
             .filter(collaborateur -> historiqueParRole.stream()
-                .noneMatch(historique -> Objects.equals(historique.getVainqueur(), collaborateur.getIdentifiant())))//
+                .noneMatch(historique -> Objects.equals(historique.getVainqueur(), collaborateur.identifiant())))//
             .findFirst();
     }
 

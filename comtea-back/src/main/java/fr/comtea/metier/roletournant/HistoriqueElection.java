@@ -8,7 +8,7 @@ import lombok.Data;
 @Data
 public class HistoriqueElection {
 
-    private UUID id = UUID.randomUUID();
+    private UUID id;
 
     private String role;
 

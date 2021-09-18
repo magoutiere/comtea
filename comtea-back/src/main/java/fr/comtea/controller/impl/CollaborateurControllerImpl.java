@@ -1,22 +1,21 @@
 package fr.comtea.controller.impl;
 
-import javax.validation.Valid;
 import java.util.List;
 
 import fr.comtea.controller.CollaborateurController;
 import fr.comtea.metier.collaborateur.Collaborateur;
 import fr.comtea.metier.collaborateur.CollaborateurService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Component;
 
-@RestController
+@Component
 @RequiredArgsConstructor
 public class CollaborateurControllerImpl implements CollaborateurController {
 
     private final CollaborateurService collaborateurService;
 
     @Override
-    public void creer(@Valid final Collaborateur collaborateur) {
+    public void creer(final Collaborateur collaborateur) {
         collaborateurService.creerOuMettreAJourCollaborateurs(List.of(collaborateur));
     }
 

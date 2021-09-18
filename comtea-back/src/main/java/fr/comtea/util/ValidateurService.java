@@ -4,7 +4,7 @@ import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
 import javax.validation.Validator;
 import java.util.Collection;
-import java.util.List;
+import java.util.Collections;
 import java.util.stream.Collectors;
 
 import lombok.RequiredArgsConstructor;
@@ -16,8 +16,8 @@ public class ValidateurService {
 
     private final Validator validator;
 
-    public <T> void valider(final List<T> collaborateurs) {
-        var violations = collaborateurs.stream()//
+    public <T> void valider(final Collection<T> listeObjets) {
+        var violations = listeObjets.stream()//
             .map(validator::validate)//
             .flatMap(Collection::stream)//
             .collect(Collectors.toSet());
@@ -28,5 +28,9 @@ public class ValidateurService {
                 .collect(Collectors.joining(","));
             throw new ConstraintViolationException(message, violations);
         }
+    }
+
+    public <T> void valider(final T objet) {
+        valider(Collections.singleton(objet));
     }
 }

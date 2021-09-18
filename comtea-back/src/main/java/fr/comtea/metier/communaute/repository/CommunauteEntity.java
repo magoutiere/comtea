@@ -1,9 +1,8 @@
-package fr.comtea.metier.roletournant.repository;
+package fr.comtea.metier.communaute.repository;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import java.time.LocalDate;
 import java.util.UUID;
 
 import lombok.Getter;
@@ -13,16 +12,14 @@ import org.hibernate.annotations.GenericGenerator;
 @Getter
 @Setter
 @Entity
-public class HistoriqueElectionEntity {
+public class CommunauteEntity {
 
     @Id
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
     private UUID id;
 
-    private String role;
+    private String identifiant;
 
-    private String vainqueur;
-
-    private LocalDate date;
+    private String nom;
 }

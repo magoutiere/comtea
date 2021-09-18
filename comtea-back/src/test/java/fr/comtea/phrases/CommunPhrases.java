@@ -5,26 +5,26 @@ import static org.assertj.core.api.Assertions.assertThat;
 import javax.transaction.Transactional;
 import java.time.LocalDate;
 
-import fr.comtea.metier.collaborateur.repository.CollaborateurRepository;
-import fr.comtea.metier.roletournant.repository.HistoriqueElectionRepository;
 import fr.comtea.util.ContexteDate;
 import io.cucumber.java.After;
 import io.cucumber.java.fr.Alors;
 import io.cucumber.java.fr.Etantdonné;
 import lombok.RequiredArgsConstructor;
+import org.springframework.context.ApplicationContext;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 @RequiredArgsConstructor
 @Transactional(rollbackOn = Exception.class)
 public class CommunPhrases {
 
-    private final CollaborateurRepository collaborateurRepository;
-
-    private final HistoriqueElectionRepository historiqueElectionRepository;
+    private final ApplicationContext applicationContext;
 
     @After
     public void nettoyerBase() {
-        collaborateurRepository.deleteAll();
-        historiqueElectionRepository.deleteAll();
+        var repositories = applicationContext.getBeansOfType(JpaRepository.class);
+        repositories.forEach((s, jpaRepository) -> {
+            jpaRepository.deleteAll();
+        });
     }
 
     @After

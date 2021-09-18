@@ -33,7 +33,7 @@ public class RoleTournantPhrases {
     @Alors("le vainqueur de l'élection est le collaborateur {string}")
     public void verifierVainqueurElection(final String identifiantAttendu) {
         var collaborateur = ContexteTest.getVainqueurElectionObtenu();
-        var identifiantObtenu = collaborateur.getIdentifiant();
+        var identifiantObtenu = collaborateur.identifiant();
 
         assertThat(identifiantObtenu).isEqualTo(identifiantAttendu);
     }
@@ -50,7 +50,7 @@ public class RoleTournantPhrases {
     @Alors("le vainqueur de l'élection est l'un des collaborateur suivant :")
     public void verifierVainqueurParmiListeCollaborateur(final List<String> identifiantsAttendus) {
         var collaborateur = ContexteTest.getVainqueurElectionObtenu();
-        var identifiantObtenu = collaborateur.getIdentifiant();
+        var identifiantObtenu = collaborateur.identifiant();
 
         assertThat(identifiantObtenu).isIn(identifiantsAttendus);
     }

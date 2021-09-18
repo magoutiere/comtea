@@ -7,9 +7,10 @@ import fr.comtea.metier.collaborateur.Collaborateur;
 import fr.comtea.metier.roletournant.HistoriqueElection;
 import fr.comtea.metier.roletournant.RoleTournantService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@Component
 @RequiredArgsConstructor
 public class RoleTournantControllerImpl implements RoleTournantController {
 

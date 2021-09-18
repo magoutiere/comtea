@@ -1,0 +1,15 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="1.0.0_003_table_communaute" author="gmec">
+        <createTable tableName="communaute_entity">
+            <column name="id" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_communauteentity"/>
+            </column>
+            <column name="identifiant" type="VARCHAR(255)"/>
+            <column name="nom" type="VARCHAR(255)"/>
+        </createTable>
+        <addUniqueConstraint columnNames="identifiant" constraintName="uc_communauteentity_identifiant" tableName="communaute_entity"/>
+    </changeSet>
+
+</databaseChangeLog>

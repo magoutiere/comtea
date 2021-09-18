@@ -17,7 +17,7 @@ public class CollaborateurUniqueValidateur implements ConstraintValidator<Collab
 
     @Override
     public boolean isValid(final Collaborateur collaborateur, final ConstraintValidatorContext constraintValidatorContext) {
-        var collaborateurExistant = collaborateurService.recupererCollaborateurParIdentifiant(collaborateur.getIdentifiant());
-        return collaborateurExistant.isEmpty() || Objects.equals(collaborateurExistant.get().getId(), collaborateur.getId());
+        var collaborateurExistant = collaborateurService.recupererCollaborateurParIdentifiant(collaborateur.identifiant());
+        return collaborateurExistant.isEmpty() || Objects.equals(collaborateurExistant.get().id(), collaborateur.id());
     }
 }
