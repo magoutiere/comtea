@@ -1,11 +1,11 @@
-package fr.comtea.service.collaborateur.validateur;
+package fr.comtea.metier.collaborateur.validateur;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 import java.util.Objects;
 
-import fr.comtea.service.collaborateur.Collaborateur;
-import fr.comtea.service.collaborateur.CollaborateurService;
+import fr.comtea.metier.collaborateur.Collaborateur;
+import fr.comtea.metier.collaborateur.CollaborateurService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 

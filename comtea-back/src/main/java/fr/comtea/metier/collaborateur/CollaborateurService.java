@@ -1,10 +1,11 @@
-package fr.comtea.service.collaborateur;
+package fr.comtea.metier.collaborateur;
 
 import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
-import fr.comtea.service.collaborateur.repository.CollaborateurRepository;
+import fr.comtea.metier.collaborateur.mapper.CollaborateurMapper;
+import fr.comtea.metier.collaborateur.repository.CollaborateurRepository;
 import fr.comtea.util.ValidateurService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

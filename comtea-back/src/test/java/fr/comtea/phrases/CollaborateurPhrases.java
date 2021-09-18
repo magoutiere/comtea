@@ -5,7 +5,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import java.util.List;
 
 import fr.comtea.controller.CollaborateurController;
-import fr.comtea.service.collaborateur.Collaborateur;
+import fr.comtea.metier.collaborateur.Collaborateur;
 import io.cucumber.java.fr.Alors;
 import io.cucumber.java.fr.Etantdonné;
 import io.cucumber.java.fr.Quand;

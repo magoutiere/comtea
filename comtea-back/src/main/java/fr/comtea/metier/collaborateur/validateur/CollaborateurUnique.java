@@ -1,4 +1,4 @@
-package fr.comtea.service.collaborateur.validateur;
+package fr.comtea.metier.collaborateur.validateur;
 
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 

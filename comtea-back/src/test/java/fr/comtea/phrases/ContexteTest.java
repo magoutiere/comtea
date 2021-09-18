@@ -1,6 +1,6 @@
 package fr.comtea.phrases;
 
-import fr.comtea.service.collaborateur.Collaborateur;
+import fr.comtea.metier.collaborateur.Collaborateur;
 
 public class ContexteTest {
 

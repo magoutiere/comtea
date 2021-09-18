@@ -1,4 +1,4 @@
-package fr.comtea.service.collaborateur.repository;
+package fr.comtea.metier.collaborateur.repository;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

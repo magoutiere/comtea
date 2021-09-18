@@ -1,9 +1,10 @@
-package fr.comtea.service.collaborateur;
+package fr.comtea.metier.collaborateur.mapper;
 
 import java.util.Collection;
 import java.util.List;
 
-import fr.comtea.service.collaborateur.repository.CollaborateurEntity;
+import fr.comtea.metier.collaborateur.Collaborateur;
+import fr.comtea.metier.collaborateur.repository.CollaborateurEntity;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")

@@ -1,4 +1,4 @@
-package fr.comtea.service.roletournant;
+package fr.comtea.metier.roletournant;
 
 import javax.transaction.Transactional;
 import java.util.Comparator;
@@ -7,8 +7,11 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-import fr.comtea.service.collaborateur.Collaborateur;
-import fr.comtea.service.collaborateur.CollaborateurService;
+import fr.comtea.metier.collaborateur.Collaborateur;
+import fr.comtea.metier.collaborateur.CollaborateurService;
+import fr.comtea.metier.roletournant.mapper.HistoriqueElectionMapper;
+import fr.comtea.metier.roletournant.repository.HistoriqueElectionEntity;
+import fr.comtea.metier.roletournant.repository.HistoriqueElectionRepository;
 import fr.comtea.util.ContexteDate;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

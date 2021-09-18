@@ -1,4 +1,4 @@
-package fr.comtea.service.collaborateur.repository;
+package fr.comtea.metier.collaborateur.repository;
 
 import java.util.Optional;
 import java.util.UUID;

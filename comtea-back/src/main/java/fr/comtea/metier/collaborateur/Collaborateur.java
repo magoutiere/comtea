@@ -1,9 +1,9 @@
-package fr.comtea.service.collaborateur;
+package fr.comtea.metier.collaborateur;
 
 import javax.validation.constraints.NotBlank;
 import java.util.UUID;
 
-import fr.comtea.service.collaborateur.validateur.CollaborateurUnique;
+import fr.comtea.metier.collaborateur.validateur.CollaborateurUnique;
 import lombok.Data;
 
 @Data

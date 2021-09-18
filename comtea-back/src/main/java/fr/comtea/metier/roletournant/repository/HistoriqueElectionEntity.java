@@ -1,4 +1,4 @@
-package fr.comtea.service.roletournant;
+package fr.comtea.metier.roletournant.repository;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

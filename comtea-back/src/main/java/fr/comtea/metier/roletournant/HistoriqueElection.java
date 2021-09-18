@@ -1,4 +1,4 @@
-package fr.comtea.service.roletournant;
+package fr.comtea.metier.roletournant;
 
 import java.time.LocalDate;
 import java.util.UUID;

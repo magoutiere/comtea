@@ -1,4 +1,4 @@
-package fr.comtea.service.roletournant;
+package fr.comtea.metier.roletournant.repository;
 
 import java.util.List;
 import java.util.Optional;

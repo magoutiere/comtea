@@ -5,8 +5,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import javax.transaction.Transactional;
 import java.time.LocalDate;
 
-import fr.comtea.service.collaborateur.repository.CollaborateurRepository;
-import fr.comtea.service.roletournant.HistoriqueElectionRepository;
+import fr.comtea.metier.collaborateur.repository.CollaborateurRepository;
+import fr.comtea.metier.roletournant.repository.HistoriqueElectionRepository;
 import fr.comtea.util.ContexteDate;
 import io.cucumber.java.After;
 import io.cucumber.java.fr.Alors;

@@ -5,8 +5,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import java.util.List;
 
 import fr.comtea.controller.RoleTournantController;
-import fr.comtea.service.roletournant.HistoriqueElection;
-import fr.comtea.service.roletournant.RoleTournantService;
+import fr.comtea.metier.roletournant.HistoriqueElection;
+import fr.comtea.metier.roletournant.RoleTournantService;
 import io.cucumber.java.fr.Alors;
 import io.cucumber.java.fr.Etantdonné;
 import io.cucumber.java.fr.Quand;
