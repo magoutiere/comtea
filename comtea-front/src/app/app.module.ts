@@ -12,6 +12,9 @@ import {MessageService} from "primeng/api";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {PanelModule} from "primeng/panel";
 import {DividerModule} from "primeng/divider";
+import { AppRoutingModule } from './app-routing.module';
+import { MenuComponent } from './components/app-menu/menu.component';
+import {MenubarModule} from "primeng/menubar";
 
 export const API_INTERCEPTOR_PROVIDER: Provider = {
   provide: HTTP_INTERCEPTORS,
@@ -22,6 +25,7 @@ export const API_INTERCEPTOR_PROVIDER: Provider = {
 @NgModule({
   declarations: [
     AppComponent,
+    MenuComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,7 +36,9 @@ export const API_INTERCEPTOR_PROVIDER: Provider = {
     CollaborateurModule,
     ToastModule,
     PanelModule,
-    DividerModule
+    DividerModule,
+    AppRoutingModule,
+    MenubarModule
   ],
   providers: [
     ApiInterceptor,

@@ -1,5 +1,5 @@
 <p-toast position="top-right"></p-toast>
-<div>
+<!--<div>
   <p-panel header="Collaborateurs">
     <app-form-ajout-collaborateur></app-form-ajout-collaborateur>
     <p-divider></p-divider>
@@ -10,9 +10,11 @@
   <p-panel header="Rôles tournants">
     <app-historique-election></app-historique-election>
   </p-panel>
+</div>-->
+
+<app-menu></app-menu>
+
+<div class="mt-2">
+  <router-outlet></router-outlet>
 </div>
-
-
-
-
 
