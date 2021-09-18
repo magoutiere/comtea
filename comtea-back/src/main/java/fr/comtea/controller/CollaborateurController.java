@@ -20,11 +20,11 @@ import org.springframework.web.bind.annotation.RestController;
 public interface CollaborateurController {
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    void creer(@Valid @RequestBody Collaborateur collaborateur);
+    void creerCollaborateur(@Valid @RequestBody Collaborateur collaborateur);
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    List<Collaborateur> liste();
+    List<Collaborateur> recupererCollaborateurs();
 
     @DeleteMapping("/{identifiant}")
-    void supprimer(@PathVariable String identifiant);
+    void supprimerCollaborateur(@PathVariable String identifiant);
 }

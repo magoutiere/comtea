@@ -20,11 +20,11 @@ import org.springframework.web.bind.annotation.RestController;
 public interface CommunauteController {
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    void creerOuMettreAJour(@Valid @RequestBody Communaute communaute);
+    void creerOuMettreAJourCommunaute(@Valid @RequestBody Communaute communaute);
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    List<Communaute> liste();
+    List<Communaute> recupererCommunautes();
 
     @DeleteMapping("/{identifiant}")
-    void supprimer(@PathVariable String identifiant);
+    void supprimerCommunaute(@PathVariable String identifiant);
 }

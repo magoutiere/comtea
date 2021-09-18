@@ -6,7 +6,6 @@ import java.util.List;
 
 import fr.comtea.controller.CommunauteController;
 import fr.comtea.metier.communaute.Communaute;
-import fr.comtea.metier.communaute.CommunauteService;
 import io.cucumber.java.fr.Alors;
 import io.cucumber.java.fr.Quand;
 import io.cucumber.java.fr.Soit;
@@ -19,13 +18,13 @@ public class CommunautePhrases {
 
     @Soit("les communautées existantes :")
     public void preparerCommunautesExistantes(final List<Communaute> communautesExistantes) {
-        communautesExistantes.forEach(communauteController::creerOuMettreAJour);
+        communautesExistantes.forEach(communauteController::creerOuMettreAJourCommunaute);
     }
 
     @Quand("je crée la communauté :")
     public void creerCommunaute(final List<Communaute> communautes) {
         try {
-            communautes.forEach(communauteController::creerOuMettreAJour);
+            communautes.forEach(communauteController::creerOuMettreAJourCommunaute);
         } catch (final Exception exception) {
             ContexteTest.setException(exception);
         }
@@ -33,7 +32,7 @@ public class CommunautePhrases {
 
     @Alors("j'obtiens communautées existantes :")
     public void verifierCommunauteExistantes(final List<Communaute> communautesAttendues) {
-        var communautesObtenues = communauteController.liste();
+        var communautesObtenues = communauteController.recupererCommunautes();
 
         assertThat(communautesObtenues)//
             .usingElementComparatorIgnoringFields("id")//
@@ -42,6 +41,6 @@ public class CommunautePhrases {
 
     @Quand("je supprime la communauté {string}")
     public void supprimerCommunaute(final String identifiant) {
-        communauteController.supprimer(identifiant);
+        communauteController.supprimerCommunaute(identifiant);
     }
 }

@@ -15,17 +15,17 @@ public class CommunauteControllerImpl implements CommunauteController {
     private final CommunauteService communauteService;
 
     @Override
-    public void creerOuMettreAJour(final Communaute communaute) {
+    public void creerOuMettreAJourCommunaute(final Communaute communaute) {
         communauteService.creerOuMettreAJourCommunaute(communaute);
     }
 
     @Override
-    public List<Communaute> liste() {
+    public List<Communaute> recupererCommunautes() {
         return communauteService.recupererCommunautes();
     }
 
     @Override
-    public void supprimer(final String identifiant) {
+    public void supprimerCommunaute(final String identifiant) {
         communauteService.supprimerCommunaute(identifiant);
     }
 }

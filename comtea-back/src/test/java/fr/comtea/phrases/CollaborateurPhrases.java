@@ -18,13 +18,13 @@ public class CollaborateurPhrases {
 
     @Etantdonné("les collaborateurs suivants :")
     public void preparerCollaborateurs(final List<Collaborateur> collaborateurs) {
-        collaborateurs.forEach(collaborateurController::creer);
+        collaborateurs.forEach(collaborateurController::creerCollaborateur);
     }
 
     @Quand("je crée le(s) collaborateur(s) suivant(s) :")
     public void creerCollaborateurs(final List<Collaborateur> collaborateurs) {
         try {
-            collaborateurs.forEach(collaborateurController::creer);
+            collaborateurs.forEach(collaborateurController::creerCollaborateur);
         } catch (final Exception ex) {
             ContexteTest.setException(ex);
         }
@@ -32,12 +32,12 @@ public class CollaborateurPhrases {
 
     @Quand("je supprime le collaborateur {string}")
     public void supprimerCollaborateur(final String identifiant) {
-        collaborateurController.supprimer(identifiant);
+        collaborateurController.supprimerCollaborateur(identifiant);
     }
 
     @Alors("j'obtiens les collaborateurs suivants :")
     public void verifierCollaborateurs(final List<Collaborateur> collaborateursAttendus) {
-        List<Collaborateur> collaborateurs = collaborateurController.liste();
+        List<Collaborateur> collaborateurs = collaborateurController.recupererCollaborateurs();
 
         assertThat(collaborateurs)//
             .usingElementComparatorIgnoringFields("id")//

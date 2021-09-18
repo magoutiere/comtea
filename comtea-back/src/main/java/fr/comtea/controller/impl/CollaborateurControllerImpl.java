@@ -15,17 +15,17 @@ public class CollaborateurControllerImpl implements CollaborateurController {
     private final CollaborateurService collaborateurService;
 
     @Override
-    public void creer(final Collaborateur collaborateur) {
+    public void creerCollaborateur(final Collaborateur collaborateur) {
         collaborateurService.creerOuMettreAJourCollaborateurs(List.of(collaborateur));
     }
 
     @Override
-    public List<Collaborateur> liste() {
+    public List<Collaborateur> recupererCollaborateurs() {
         return collaborateurService.recupererCollaborateurs();
     }
 
     @Override
-    public void supprimer(final String identifiant) {
+    public void supprimerCollaborateur(final String identifiant) {
         collaborateurService.supprimerCollaborateur(identifiant);
     }
 }

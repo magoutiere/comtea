@@ -16,19 +16,19 @@ export class CollaborateurService {
   }
 
   majCollaborateurs() {
-    return this.collaborateurApiService.liste().toPromise()
+    return this.collaborateurApiService.recupererCollaborateurs().toPromise()
       .then(value => this.collaborateurs.next(value));
   }
 
   creerCollaborateur(collaborateur: Collaborateur) {
-    return this.collaborateurApiService.creer({body: collaborateur}).toPromise()
+    return this.collaborateurApiService.creerCollaborateur({body: collaborateur}).toPromise()
       .then(() => this.notificationService.success({titre: 'Succès', message: `Collaborateur ${collaborateur.identifiant} créé !`}))
       .then(() => this.majCollaborateurs());
   }
 
   supprimerCollaborateur(collaborateur: Collaborateur) {
     const identifiant = collaborateur.identifiant;
-    this.collaborateurApiService.supprimer({identifiant}).toPromise()
+    this.collaborateurApiService.supprimerCollaborateur({identifiant}).toPromise()
       .then(() => this.notificationService.success({titre: 'Succès', message: `Collaborateur ${collaborateur.identifiant} supprimé !`}))
       .then(() => this.majCollaborateurs());
   }
