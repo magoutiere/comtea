@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {CommunauteService} from "../../services/communaute.service";
 import {Communaute} from "../../../../../../api/models/communaute";
+import {FormControl, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-gestion-communaute',
@@ -8,6 +9,11 @@ import {Communaute} from "../../../../../../api/models/communaute";
 })
 export class GestionCommunauteComponent implements OnInit {
   communautes: Array<Communaute> = [];
+
+  formNouveau = new FormGroup({
+    identifiant: new FormControl(''),
+    nom: new FormControl('')
+  })
 
   constructor(private communauteService: CommunauteService) {
   }
@@ -17,7 +23,15 @@ export class GestionCommunauteComponent implements OnInit {
     this.communauteService.majCommunautes();
   }
 
-  supprimer(communaute: any) {
+  supprimer(communaute: Communaute) {
+    this.communauteService.supprimerCommunaute(communaute);
+  }
 
+  creer() {
+    const communaute: Communaute = this.formNouveau.value;
+    this.communauteService.creerCommunaute(communaute)
+      .then(() => this.formNouveau.reset())
+      .catch(() => {
+      });
   }
 }

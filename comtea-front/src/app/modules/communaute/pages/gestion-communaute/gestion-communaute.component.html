@@ -1,18 +1,51 @@
-<p-table [value]="communautes" responsiveLayout="scroll" styleClass="p-datatable-sm">
-  <ng-template pTemplate="header">
-    <tr>
-      <th>Identifiant</th>
-      <th>Nom</th>
-      <th>&nbsp;</th>
-    </tr>
-  </ng-template>
-  <ng-template pTemplate="body" let-communaute>
-    <tr>
-      <td>{{communaute.identifiant}}</td>
-      <td>
-        <button pButton (click)="supprimer(communaute)">Supprimer</button>
-      </td>
-    </tr>
-  </ng-template>
-</p-table>
+<div>
+  <p-panel header="Communautées">
+    <p-table [value]="communautes" responsiveLayout="scroll" styleClass="p-datatable-sm">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Identifiant</th>
+          <th>Nom</th>
+          <th>&nbsp;</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-communaute>
+        <tr>
+          <td>{{communaute.identifiant}}</td>
+          <td>{{communaute.nom}}</td>
+          <td>
+            <button pButton (click)="supprimer(communaute)">Supprimer</button>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </p-panel>
+</div>
 
+<div class="mt-2">
+  <p-panel header="Nouvelle communauté">
+    <form [formGroup]="formNouveau" (ngSubmit)="creer()">
+      <div class="grid formgroup-inline">
+        <div class="col-12 md-4">
+          <div class="p-inputgroup">
+            <span class="p-inputgroup-addon"><i class="pi pi-users"></i></span>
+            <input pInputText type="text" formControlName="identifiant" placeholder="Nom court"/>
+          </div>
+        </div>
+
+        <div class="col-12 md-4">
+          <div class="p-inputgroup">
+            <span class="p-inputgroup-addon"><i class="pi pi-tag"></i></span>
+            <input pInputText type="text" formControlName="nom" placeholder="Nom long"/>
+          </div>
+        </div>
+
+        <div class="col-12 md-4">
+          <div class="p-inputgroup">
+            <input pButton type="submit" value="Ajouter"/>
+          </div>
+        </div>
+      </div>
+
+    </form>
+  </p-panel>
+</div>
