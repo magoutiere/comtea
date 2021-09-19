@@ -4,10 +4,10 @@ import {Collaborateur} from "../../../../../../api/models/collaborateur";
 import {CollaborateurService} from "../../services/collaborateur.service";
 
 @Component({
-  selector: 'app-form-ajout-collaborateur',
-  templateUrl: './form-ajout-collaborateur.component.html'
+  selector: 'app-ajout-collaborateur',
+  templateUrl: './ajout-collaborateur.component.html'
 })
-export class FormAjoutCollaborateurComponent implements OnInit {
+export class AjoutCollaborateurComponent implements OnInit {
   nouveauCollaborateurForm = new FormGroup({
     identifiant: new FormControl('')
   })

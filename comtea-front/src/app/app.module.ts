@@ -13,8 +13,9 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {PanelModule} from "primeng/panel";
 import {DividerModule} from "primeng/divider";
 import { AppRoutingModule } from './app-routing.module';
-import { MenuComponent } from './components/app-menu/menu.component';
+import { MenuComponent } from './components/menu/menu.component';
 import {MenubarModule} from "primeng/menubar";
+import {CommunauteModule} from "./modules/communaute/communaute.module";
 
 export const API_INTERCEPTOR_PROVIDER: Provider = {
   provide: HTTP_INTERCEPTORS,
@@ -34,6 +35,7 @@ export const API_INTERCEPTOR_PROVIDER: Provider = {
     ApiModule.forRoot({rootUrl: ''}),
     RoleTournantModule,
     CollaborateurModule,
+    CommunauteModule,
     ToastModule,
     PanelModule,
     DividerModule,

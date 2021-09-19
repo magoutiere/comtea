@@ -1,0 +1,18 @@
+<p-table [value]="communautes" responsiveLayout="scroll" styleClass="p-datatable-sm">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Identifiant</th>
+      <th>Nom</th>
+      <th>&nbsp;</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-communaute>
+    <tr>
+      <td>{{communaute.identifiant}}</td>
+      <td>
+        <button pButton (click)="supprimer(communaute)">Supprimer</button>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>
+

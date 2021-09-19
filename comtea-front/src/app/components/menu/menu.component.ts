@@ -16,6 +16,7 @@ export class MenuComponent implements OnInit {
     this.items = [
       {label: 'Collaborateurs', routerLink: 'collaborateurs'},
       {label: 'Rôles tournants', routerLink: 'roles-tournants'},
+      {label: 'Communautées', routerLink: 'communautes'}
     ]
   }
 

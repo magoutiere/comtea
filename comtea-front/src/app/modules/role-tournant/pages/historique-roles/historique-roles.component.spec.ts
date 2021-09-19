@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PageHistoriqueRolesComponent } from './page-historique-roles.component';
+import { HistoriqueRolesComponent } from './historique-roles.component';
 
 describe('PageHistoriqueRolesComponent', () => {
-  let component: PageHistoriqueRolesComponent;
-  let fixture: ComponentFixture<PageHistoriqueRolesComponent>;
+  let component: HistoriqueRolesComponent;
+  let fixture: ComponentFixture<HistoriqueRolesComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PageHistoriqueRolesComponent ]
+      declarations: [ HistoriqueRolesComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PageHistoriqueRolesComponent);
+    fixture = TestBed.createComponent(HistoriqueRolesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

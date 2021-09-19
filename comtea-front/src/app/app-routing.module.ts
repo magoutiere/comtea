@@ -1,11 +1,13 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from "@angular/router";
-import {PageAdminCollaborateurComponent} from "./modules/collaborateur/pages/page-admin-collaborateur/page-admin-collaborateur.component";
-import {PageHistoriqueRolesComponent} from "./modules/role-tournant/pages/page-historique-roles/page-historique-roles.component";
+import {GestionCollaborateurComponent} from "./modules/collaborateur/pages/gestion-collaborateur/gestion-collaborateur.component";
+import {HistoriqueRolesComponent} from "./modules/role-tournant/pages/historique-roles/historique-roles.component";
+import {GestionCommunauteComponent} from "./modules/communaute/pages/gestion-communaute/gestion-communaute.component";
 
 const appRoutes: Routes = [
-  {path: 'collaborateurs', component: PageAdminCollaborateurComponent},
-  {path: 'roles-tournants', component: PageHistoriqueRolesComponent},
+  {path: 'collaborateurs', component: GestionCollaborateurComponent},
+  {path: 'roles-tournants', component: HistoriqueRolesComponent},
+  {path: 'communautes', component: GestionCommunauteComponent},
   {path: '', redirectTo: '/roles-tournants', pathMatch: 'full'}
 ];
 
